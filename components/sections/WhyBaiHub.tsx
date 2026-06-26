@@ -3,10 +3,8 @@
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { FeatureCard } from "@/components/shared/FeatureCard";
-import { StatCounter } from "@/components/shared/StatCounter";
-import { TestimonialCard } from "@/components/shared/TestimonialCard";
 import { siteConfig } from "@/lib/config/site.config";
-import { fadeUpVariants, getMotionTransition, usePrefersReducedMotion } from "@/lib/motion";
+import { usePrefersReducedMotion } from "@/lib/motion";
 
 const containerVariants = {
   hidden: {},
@@ -15,7 +13,6 @@ const containerVariants = {
 
 export function WhyBaiHub() {
   const reducedMotion = usePrefersReducedMotion();
-  const transition = getMotionTransition(reducedMotion);
 
   return (
     <section id="why-baihub">
@@ -78,43 +75,6 @@ export function WhyBaiHub() {
             <p className="relative text-base font-bold text-black sm:text-lg">
               {siteConfig.subscriptionBanner}
             </p>
-          </motion.div>
-        </div>
-      </div>
-
-      {/* Stats + testimonials — yellow band */}
-      <div className="relative overflow-hidden bg-brand-primary section-padding">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(0,0,0,0.06)_1px,transparent_0)] [background-size:26px_26px]"
-        />
-        <div className="section-container relative">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
-            transition={transition}
-            variants={fadeUpVariants}
-            className="grid gap-y-10 divide-black/10 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 lg:divide-x"
-          >
-            {siteConfig.stats.map((stat) => (
-              <div key={stat.label} className="px-2">
-                <StatCounter {...stat} />
-              </div>
-            ))}
-          </motion.div>
-
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ ...transition, delay: reducedMotion ? 0 : 0.1 }}
-            variants={fadeUpVariants}
-            className="mt-16 grid gap-6 md:grid-cols-3"
-          >
-            {siteConfig.testimonials.map((testimonial) => (
-              <TestimonialCard key={testimonial.author} {...testimonial} />
-            ))}
           </motion.div>
         </div>
       </div>
