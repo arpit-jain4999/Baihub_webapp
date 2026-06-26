@@ -71,31 +71,35 @@ export const siteConfig = {
 
   services: [
     {
-      id: "babysitter",
-      title: "Babysitters / Nannies",
-      description: "Caring, trained childcare for your little ones.",
-      icon: "baby",
-      whatsappKey: "babysitter" as const,
-    },
-    {
       id: "japa",
-      title: "Japa Maids",
-      description: "Specialized postnatal mother & newborn care.",
-      icon: "heart",
+      title: "Japa Maid",
+      description:
+        "Specialized postnatal care for mother and newborn. Bathing, massage, feeding support, and recovery assistance.",
+      image: "/images/service-japa.png",
       whatsappKey: "japa" as const,
     },
     {
       id: "housemaid",
-      title: "Housemaids",
-      description: "Cleaning, cooking, and daily household upkeep.",
-      icon: "home",
+      title: "House Cleaning",
+      description:
+        "Professional sweeping, mopping, dusting, and daily upkeep to keep your home spotless.",
+      image: "/images/service-cleaning.png",
       whatsappKey: "housemaid" as const,
     },
     {
-      id: "helper",
-      title: "Helpers",
-      description: "Flexible general household help when you need it.",
-      icon: "users",
+      id: "cooking",
+      title: "Cooking",
+      description:
+        "Home-style meal preparation, cutting, chopping, and kitchen cleanup. Fresh food daily.",
+      image: "/images/service-cooking.png",
+      whatsappKey: "helper" as const,
+    },
+    {
+      id: "elderly",
+      title: "Elderly Care",
+      description:
+        "Compassionate companionship, meal service, medication reminders, and daily assistance for seniors.",
+      image: "/images/service-elderly.png",
       whatsappKey: "helper" as const,
     },
   ],

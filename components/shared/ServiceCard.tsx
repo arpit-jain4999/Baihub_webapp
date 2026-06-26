@@ -1,63 +1,59 @@
-import {
-  Baby,
-  Heart,
-  Home,
-  Users,
-  type LucideIcon,
-} from "lucide-react";
+import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { ButtonAnchor } from "@/components/ui/button-link";
 import type { ServiceWhatsAppKey } from "@/lib/config/site.config";
 import { getServiceWhatsAppUrl } from "@/lib/whatsapp";
 
-const iconMap: Record<string, LucideIcon> = {
-  baby: Baby,
-  heart: Heart,
-  home: Home,
-  users: Users,
-};
-
 type ServiceCardProps = {
   title: string;
   description: string;
-  icon: string;
+  image: string;
   whatsappKey: ServiceWhatsAppKey;
 };
 
 export function ServiceCard({
   title,
   description,
-  icon,
+  image,
   whatsappKey,
 }: ServiceCardProps) {
-  const Icon = iconMap[icon] ?? Users;
-
   return (
-    <article className="group flex h-full flex-col rounded-2xl border border-border bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-      <div className="flex size-12 items-center justify-center rounded-xl bg-brand-primary/15 text-brand-secondary">
-        <Icon className="size-6" aria-hidden="true" />
+    <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+      {/* Illustration */}
+      <div className="relative flex h-48 items-center justify-center bg-brand-primary/5 p-4">
+        <Image
+          src={image}
+          alt={title}
+          width={280}
+          height={200}
+          className="h-full w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
+        />
       </div>
-      <h3 className="mt-4 text-xl font-semibold text-brand-foreground">{title}</h3>
-      <p className="mt-2 flex-1 text-sm leading-relaxed text-brand-muted">
-        {description}
-      </p>
-      <div className="mt-4 flex flex-wrap gap-2">
-        <Badge variant="outline" className="rounded-full">
-          Part-time
-        </Badge>
-        <Badge variant="outline" className="rounded-full">
-          Full-time
-        </Badge>
+
+      {/* Content */}
+      <div className="flex flex-1 flex-col p-5">
+        <h3 className="text-lg font-semibold text-brand-foreground">{title}</h3>
+        <p className="mt-2 flex-1 text-sm leading-relaxed text-brand-muted">
+          {description}
+        </p>
+        <div className="mt-4 flex flex-wrap gap-2">
+          <Badge variant="outline" className="rounded-full text-xs">
+            Part-time
+          </Badge>
+          <Badge variant="outline" className="rounded-full text-xs">
+            Full-time
+          </Badge>
+        </div>
+        <ButtonAnchor
+          variant="link"
+          href={getServiceWhatsAppUrl(whatsappKey)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-3 h-auto justify-start px-0 text-sm font-semibold text-brand-secondary"
+        >
+          Book this helper
+        </ButtonAnchor>
       </div>
-      <ButtonAnchor
-        variant="link"
-        href={getServiceWhatsAppUrl(whatsappKey)}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-4 h-auto justify-start px-0 text-brand-secondary"
-      >
-        Book this helper
-      </ButtonAnchor>
     </article>
   );
 }

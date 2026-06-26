@@ -4,7 +4,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { usePrefersReducedMotion } from "@/lib/motion";
 import { siteConfig } from "@/lib/config/site.config";
-import { cn } from "@/lib/utils";
 
 const appScreens = [
   {
@@ -16,7 +15,6 @@ const appScreens = [
     src: "/images/app-screen-2.png",
     alt: "BaiHub app, get matched with verified helpers",
     step: siteConfig.steps[1],
-    featured: true,
   },
   {
     src: "/images/app-screen-3.png",
@@ -26,18 +24,8 @@ const appScreens = [
 ];
 
 const phoneVariants = {
-  hidden: (i: number) => ({
-    opacity: 0,
-    y: 60,
-    scale: 0.92,
-    rotateY: i === 0 ? 8 : i === 2 ? -8 : 0,
-  }),
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    rotateY: 0,
-  },
+  hidden: { opacity: 0, y: 48, scale: 0.95 },
+  visible: { opacity: 1, y: 0, scale: 1 },
 };
 
 const labelVariants = {
@@ -45,13 +33,17 @@ const labelVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
+const PHONE_WIDTH = "w-[180px] sm:w-[220px] lg:w-[240px]";
+
 export function HowItWorks() {
   const reducedMotion = usePrefersReducedMotion();
 
   return (
-    <section id="how-it-works" className="section-padding overflow-hidden bg-gradient-to-b from-brand-primary/10 via-brand-primary/5 to-white">
+    <section
+      id="how-it-works"
+      className="section-padding overflow-hidden bg-gradient-to-b from-brand-primary/10 via-brand-primary/5 to-white"
+    >
       <div className="section-container">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -70,19 +62,10 @@ export function HowItWorks() {
           </p>
         </motion.div>
 
-        {/* Phone mockups */}
-        <div className="mt-16 flex items-end justify-center gap-4 sm:gap-6 lg:gap-10">
+        <div className="mt-16 grid grid-cols-1 items-start gap-10 sm:grid-cols-3 sm:gap-6 lg:gap-10">
           {appScreens.map((screen, index) => (
-            <div
-              key={screen.step.number}
-              className={cn(
-                "flex flex-col items-center",
-                screen.featured ? "z-10" : "z-0"
-              )}
-            >
-              {/* Phone frame */}
+            <div key={screen.step.number} className="flex flex-col items-center">
               <motion.div
-                custom={index}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-40px" }}
@@ -91,45 +74,28 @@ export function HowItWorks() {
                   reducedMotion
                     ? { duration: 0 }
                     : {
-                        duration: 0.6,
-                        delay: index * 0.15,
+                        duration: 0.55,
+                        delay: index * 0.12,
                         ease: [0.25, 0.46, 0.45, 0.94],
                       }
                 }
                 whileHover={
-                  reducedMotion
-                    ? undefined
-                    : { y: -8, transition: { duration: 0.3 } }
+                  reducedMotion ? undefined : { y: -6, transition: { duration: 0.25 } }
                 }
-                className={cn(
-                  "relative cursor-default overflow-hidden rounded-[2rem] shadow-2xl transition-shadow duration-300",
-                  screen.featured
-                    ? "w-[180px] shadow-black/15 sm:w-[220px] lg:w-[260px]"
-                    : "w-[150px] shadow-black/10 sm:w-[180px] lg:w-[210px]",
-                  screen.featured ? "" : "mb-8"
-                )}
+                className={`relative overflow-hidden rounded-[2rem] shadow-2xl shadow-black/10 ${PHONE_WIDTH}`}
               >
-                {/* Thin top accent line */}
-                <div
-                  className={cn(
-                    "h-1",
-                    screen.featured ? "bg-brand-primary" : "bg-border"
-                  )}
-                />
-
-                {/* Screenshot */}
-                <div className="relative w-full aspect-[9/18] bg-white">
+                <div className="h-1 bg-brand-primary" />
+                <div className="relative aspect-[9/19] w-full bg-white">
                   <Image
                     src={screen.src}
                     alt={screen.alt}
                     fill
-                    sizes="(max-width: 640px) 150px, (max-width: 1024px) 220px, 260px"
+                    sizes="(max-width: 640px) 180px, 240px"
                     className="object-cover object-top"
                   />
                 </div>
               </motion.div>
 
-              {/* Step label below the phone */}
               <motion.div
                 initial="hidden"
                 whileInView="visible"
@@ -138,18 +104,11 @@ export function HowItWorks() {
                 transition={
                   reducedMotion
                     ? { duration: 0 }
-                    : { duration: 0.4, delay: 0.3 + index * 0.15 }
+                    : { duration: 0.4, delay: 0.25 + index * 0.12 }
                 }
-                className="mt-6 max-w-[180px] text-center sm:max-w-[220px]"
+                className="mt-6 max-w-[240px] text-center"
               >
-                <div
-                  className={cn(
-                    "mx-auto mb-2 flex size-8 items-center justify-center rounded-full text-sm font-bold",
-                    screen.featured
-                      ? "bg-brand-primary text-black"
-                      : "bg-brand-surface text-brand-foreground"
-                  )}
-                >
+                <div className="mx-auto mb-2 flex size-8 items-center justify-center rounded-full bg-brand-primary text-sm font-bold text-black">
                   {screen.step.number}
                 </div>
                 <p className="text-sm font-semibold text-brand-foreground sm:text-base">
