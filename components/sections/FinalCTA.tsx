@@ -17,7 +17,7 @@ export function FinalCTA() {
             href={getBookUrl()}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 h-12 bg-brand-primary px-8 text-base font-semibold text-black hover:bg-brand-primary/90"
+            className="mt-8 h-12 bg-black px-8 text-base font-semibold text-white hover:bg-black/90"
           >
             Book Now
           </ButtonAnchor>

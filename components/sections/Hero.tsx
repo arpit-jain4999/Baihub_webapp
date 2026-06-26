@@ -62,8 +62,8 @@ export function Hero() {
               href={getBookUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              variant="link"
-              className="mt-5 h-auto px-0 text-base font-semibold text-brand-secondary hover:text-brand-secondary/80"
+              size="lg"
+              className="mt-5 h-12 bg-black px-6 text-base font-semibold text-white hover:bg-black/90"
             >
               {siteConfig.hero.localityCta}
               <ArrowRight className="size-4" />

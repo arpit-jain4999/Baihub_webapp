@@ -9,7 +9,7 @@ export function MobileBottomCTA() {
         href={getBookUrl()}
         target="_blank"
         rel="noopener noreferrer"
-        className="h-12 w-full bg-brand-primary text-base font-semibold text-black hover:bg-brand-primary/90"
+        className="h-12 w-full bg-black text-base font-semibold text-white hover:bg-black/90"
       >
         Book a Helper Now
       </ButtonAnchor>

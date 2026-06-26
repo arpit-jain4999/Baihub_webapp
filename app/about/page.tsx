@@ -33,7 +33,7 @@ export default function AboutPage() {
               href={getBookUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-brand-primary font-semibold text-black hover:bg-brand-primary/90"
+              className="bg-black font-semibold text-white hover:bg-black/90"
             >
               Book a Helper Now
             </ButtonAnchor>

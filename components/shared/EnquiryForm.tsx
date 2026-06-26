@@ -83,7 +83,7 @@ export function EnquiryForm() {
       <Button
         type="submit"
         size="lg"
-        className="w-full bg-brand-primary font-semibold text-black hover:bg-brand-primary/90"
+        className="w-full bg-black font-semibold text-white hover:bg-black/90"
       >
         Send enquiry on WhatsApp
       </Button>

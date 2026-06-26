@@ -74,7 +74,7 @@ export function Pricing() {
             href={getBookUrl()}
             target="_blank"
             rel="noopener noreferrer"
-            className="h-12 bg-brand-primary px-8 font-semibold text-black hover:bg-brand-primary/90"
+            className="h-12 bg-black px-8 font-semibold text-white hover:bg-black/90"
           >
             Get a custom quote
           </ButtonAnchor>
