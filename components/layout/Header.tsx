@@ -1,19 +1,19 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
+    Sheet,
+    SheetContent,
+    SheetHeader,
+    SheetTitle,
+    SheetTrigger,
 } from "@/components/ui/sheet";
 import { siteConfig } from "@/lib/config/site.config";
 import { cn } from "@/lib/utils";
+import { Menu } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -49,7 +49,7 @@ export function Header() {
               alt={siteConfig.name}
               width={140}
               height={40}
-              className="h-8 w-auto lg:h-10"
+              className="h-10 w-auto lg:h-14"
               priority
             />
           </Link>

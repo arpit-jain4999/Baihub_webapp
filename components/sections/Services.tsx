@@ -17,7 +17,7 @@ export function Services() {
             Who You Can Hire
           </h2>
           <p className="mt-4 text-lg text-brand-muted">
-            Verified helpers for every home need — part-time or full-time.
+            Verified helpers for every home need. Part-time or full-time.
           </p>
         </div>
 

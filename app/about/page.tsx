@@ -1,7 +1,7 @@
-import { ButtonAnchor, ButtonLink } from "@/components/ui/button-link";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { MobileBottomCTA } from "@/components/layout/MobileBottomCTA";
+import { ButtonAnchor, ButtonLink } from "@/components/ui/button-link";
 import { createPageMetadata } from "@/lib/seo";
 import { getDefaultWhatsAppUrl } from "@/lib/whatsapp";
 
@@ -22,7 +22,7 @@ export default function AboutPage() {
           <p className="mt-6 text-lg leading-relaxed text-brand-muted">
             BaiHub is a placement and matching service for longer-term, high-trust
             home roles. We connect families with verified Babysitters, Japa Maids,
-            Housemaids, and Helpers — available part-time or full-time.
+            Housemaids, and Helpers - available part-time or full-time.
           </p>
           <p className="mt-4 text-lg leading-relaxed text-brand-muted">
             Every helper is ID and police verified, trained, and backed by our

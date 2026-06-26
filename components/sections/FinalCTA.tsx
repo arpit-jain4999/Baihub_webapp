@@ -10,7 +10,7 @@ export function FinalCTA() {
             Find Your Perfect Helper Today
           </h2>
           <p className="mt-4 text-lg text-brand-muted">
-            Let us match you with verified, trained help — stress-free.
+            Let us match you with verified, trained help. Stress-free.
           </p>
           <ButtonAnchor
             size="lg"

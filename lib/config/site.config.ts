@@ -6,9 +6,9 @@ export const siteConfig = {
   loginUrl: "https://app.baihub.co.in",
 
   appStores: {
-    googlePlay:
-      "https://play.google.com/store/apps/details?id=com.baihub.app",
-    appStore: "https://apps.apple.com/app/baihub/id000000000",
+    downloadUrl: "https://baihub.co.in/dl",
+    googlePlay: "https://baihub.co.in/dl",
+    appStore: "https://baihub.co.in/dl",
   },
 
   contact: {
@@ -45,7 +45,7 @@ export const siteConfig = {
   hero: {
     headline: "Trusted Domestic Help in Minutes.",
     subhead:
-      "Verified Babysitters, Japa Maids, Housemaids and Helpers — part-time or full-time, with complete peace of mind.",
+      "Verified Babysitters, Japa Maids, Housemaids and Helpers. Part-time or full-time, with complete peace of mind.",
     trustStrip: "Trusted by 2,500+ families · 12 cities live",
     localityCta: "Request BaiHub in your locality",
     rating: {
@@ -104,7 +104,7 @@ export const siteConfig = {
     {
       number: 1,
       title: "Tell us your requirements",
-      description: "Role, hours, location, and start date — share what you need.",
+      description: "Role, hours, location, and start date. Share what you need.",
       icon: "clipboard",
     },
     {
@@ -137,7 +137,7 @@ export const siteConfig = {
     {
       title: "Replacement in 48 Hours",
       description:
-        "If it's not the right fit, we replace your helper quickly — no hassle.",
+        "If it's not the right fit, we replace your helper quickly. No hassle.",
       icon: "refresh-cw",
     },
     {
@@ -248,7 +248,7 @@ export const siteConfig = {
     {
       question: "What's the difference between part-time and full-time?",
       answer:
-        "Part-time helpers work fixed hours on selected days — ideal for cleaning, cooking, or babysitting shifts. Full-time helpers are dedicated to your household for longer daily hours.",
+        "Part-time helpers work fixed hours on selected days, ideal for cleaning, cooking, or babysitting shifts. Full-time helpers are dedicated to your household for longer daily hours.",
     },
     {
       question: "How does payment work?",
@@ -268,7 +268,7 @@ export const siteConfig = {
     {
       question: "What does a Japa maid do?",
       answer:
-        "Japa maids specialize in postnatal care — newborn bathing and massage, breastfeeding support, mother recovery assistance, hygiene for baby and mother, and sometimes postnatal meal preparation.",
+        "Japa maids specialize in postnatal care: newborn bathing and massage, breastfeeding support, mother recovery assistance, hygiene for baby and mother, and sometimes postnatal meal preparation.",
     },
   ],
 

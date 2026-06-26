@@ -11,7 +11,7 @@ export function Stats() {
   const transition = getMotionTransition(reducedMotion);
 
   return (
-    <section className="section-padding bg-brand-secondary text-white">
+    <section className="section-padding bg-brand-primary">
       <div className="section-container">
         <motion.div
           initial="hidden"
@@ -22,9 +22,7 @@ export function Stats() {
           className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4"
         >
           {siteConfig.stats.map((stat) => (
-            <div key={stat.label} className="[&_*]:text-white [&_.text-brand-muted]:text-white/80">
-              <StatCounter {...stat} />
-            </div>
+            <StatCounter key={stat.label} {...stat} />
           ))}
         </motion.div>
 
