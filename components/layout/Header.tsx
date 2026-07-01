@@ -94,9 +94,7 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const mainLinks = siteConfig.navLinks.filter(
-    (link) => link.label !== "About"
-  );
+  const mainLinks = siteConfig.navLinks.filter((link) => link.label !== "About");
   const aboutLink = siteConfig.navLinks.find((link) => link.label === "About");
 
   return (
